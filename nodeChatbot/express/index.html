@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatBot</title>
+ <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="express/public/css/style.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    $(function () {
+      var socket = io();
+      $('form').submit(function (e) {
+        e.preventDefault(); // prevents page reloading
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', function (msg) {
+        $('#messages').append($('<li>' + msg + '</li>'));
+      });
+    });
+  </script>
+
+ 
+  <h1 style="text-align: center; background-color: teal; color: whitesmoke; height: 60px;">Chat With Us</h1>
+
+  <section style="overflow-y: auto; height:500px; margin-top: 20px; margin-left: 5%; margin-right: 5%;">
+    <div>
+      <ul id="messages" style="padding-bottom: 0cm; margin-bottom: 0cm;">
+      </ul>
+      <form action="" id="f" >
+        <input id="m" placeholder="Ask your queries here...type Hello "  autocomplete="off" height="30px" />
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="border-radius: 0px ;width: 100%; font-size: 30px;  background-color: teal;">Send</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+
+</html>

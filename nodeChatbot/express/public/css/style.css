@@ -1,0 +1,70 @@
+     
+      body {
+        font: 19px Helvetica, Arial; 
+        background: dodgerblue
+        /* padding-left:10%;
+        padding-right:10%; */
+      }
+
+      #f { 
+          position: fixed; 
+          bottom: 0%; 
+          left:0%; 
+          right:0%; 
+        }
+
+      #f input { 
+          border: 1px solid #a9b3bd; 
+          width: 100%;
+          height: 35px; 
+          font-size:100%; 
+          border-radius: 0px;
+        }
+
+      #messages { 
+          list-style-type: none; 
+          padding: 0; 
+          padding-bottom: 3%;
+        
+        }
+
+      #messages li { 
+          padding: 15px 10px; 
+          text-align: left; 
+          font-size: 20px;
+          background: teal;
+          color: white;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+      #messages li:nth-child(odd) { 
+          background:rgb(6, 180, 166); 
+          text-align: right; 
+          color: white;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+           /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background:rgb(130, 224, 255); 
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+       ::-webkit-scrollbar-thumb:hover {
+        background: rgb(87, 165, 190); 
+      }
+
+
+   
